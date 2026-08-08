@@ -52,6 +52,6 @@ public/favicon.svg          # 品牌标识（宝石切面 = 精选之意）
 
 ## 关键说明与假设
 
-- **联系方式为占位**：页面中的 `hello@yingxuan.example.com` 为占位邮箱，等待人工确认真实联系方式后替换（`src/pages/index.astro` CTA 区块）。
+- **联系方式**：页面 CTA 区块使用真实邮箱 `ivan@yingxuan.io`（`src/pages/index.astro`）。
 - **文案与视觉**：因暂无产品截图 / Demo 素材，文案与品牌视觉由执行方基于「AI Agent 咨询 + 定制开发」的业务定位合理规划。
 - **页脚合规信息**：公司名称「深圳市自由邦互联网有限公司」与 ICP 备案号「粤ICP备15021086号-2」已展示，备案号链接至工信部备案系统 <https://beian.miit.gov.cn/>（新标签页打开）。
