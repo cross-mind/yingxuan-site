@@ -1,0 +1,86 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="#top" aria-label="英选 首页">
+        <img src="/favicon.svg" width="30" height="30" alt="" />
+        <span>英选</span>
+      </a>
+      <p>AI Agent 建设咨询与定制化 Agent 服务</p>
+    </div>
+
+    <div class="footer-meta">
+      <p class="company">深圳市自由邦互联网有限公司</p>
+      <p class="beian">
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >粤ICP备15021086号-2</a>
+      </p>
+      <p class="copy">© {year} 英选 · 版权所有</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg-elev);
+    padding-block: 48px;
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer-brand .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .footer-brand p {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  .footer-meta {
+    text-align: right;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 2;
+  }
+  .footer-meta .company {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .footer-meta .beian a {
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .footer-meta .beian a:hover {
+    color: var(--brand-3);
+    border-bottom-color: var(--brand-3);
+  }
+  .footer-meta .copy {
+    color: var(--text-faint);
+    font-size: 13px;
+  }
+  @media (max-width: 620px) {
+    .footer-inner {
+      flex-direction: column;
+    }
+    .footer-meta {
+      text-align: left;
+    }
+  }
+</style>

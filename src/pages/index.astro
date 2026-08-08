@@ -1,0 +1,587 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const services = [
+  {
+    tag: "01",
+    title: "AI Agent 建设咨询",
+    lead: "在正确的场景，用正确的方式引入 Agent。",
+    desc: "很多团队不是缺 AI，而是不知道该把 Agent 用在哪、怎么用才划算。我们帮你厘清场景、评估可行性，给出一份能落地的路线图。",
+    points: [
+      "业务场景梳理与优先级排序",
+      "可行性与投入产出（ROI）评估",
+      "技术选型与 Agent 架构设计",
+      "分阶段落地路线图与团队赋能",
+    ],
+  },
+  {
+    tag: "02",
+    title: "定制化 Agent 开发",
+    lead: "从 0 到 1，交付可用、可靠、可维护的 Agent。",
+    desc: "把咨询里确定的方案真正做出来。我们负责从需求到上线的全流程，交付的是能长期运行、可持续迭代的系统，而不是一次性 Demo。",
+    points: [
+      "需求拆解与工作流编排设计",
+      "工具、API 与内部系统集成",
+      "知识库 / RAG 与记忆能力构建",
+      "评测体系、部署与持续运维",
+    ],
+  },
+];
+
+const capabilities = [
+  {
+    title: "场景诊断与选型",
+    desc: "从业务目标出发判断哪些环节适合交给 Agent，避免为了 AI 而 AI。",
+  },
+  {
+    title: "多 Agent 编排",
+    desc: "把复杂任务拆分为协作的 Agent 与工作流，稳定完成长链路任务。",
+  },
+  {
+    title: "工具与系统集成",
+    desc: "通过 API、MCP 等方式，让 Agent 真正能操作你的业务系统与数据。",
+  },
+  {
+    title: "知识库与 RAG",
+    desc: "沉淀企业知识，构建检索增强与长期记忆，让回答有据可依。",
+  },
+  {
+    title: "评测与质量保障",
+    desc: "建立可量化的评测集与回归机制，让效果可衡量、迭代有方向。",
+  },
+  {
+    title: "安全与合规",
+    desc: "权限边界、数据隔离与审计留痕，让 Agent 在可控范围内运行。",
+  },
+];
+
+const steps = [
+  {
+    n: "1",
+    title: "洞察",
+    desc: "深入业务与现有流程，明确目标、约束与衡量指标。",
+  },
+  {
+    n: "2",
+    title: "设计",
+    desc: "输出方案与 Agent 架构，对齐范围、里程碑与验收标准。",
+  },
+  {
+    n: "3",
+    title: "构建",
+    desc: "开发、集成与评测并行推进，小步快跑、持续验证效果。",
+  },
+  {
+    n: "4",
+    title: "运营",
+    desc: "上线后监控表现，基于真实数据持续优化与扩展能力。",
+  },
+];
+
+const reasons = [
+  {
+    title: "既懂业务，也懂技术",
+    desc: "我们不只写代码，更关注它为业务解决了什么问题——从场景到工程一体考量。",
+  },
+  {
+    title: "以效果为导向",
+    desc: "每个 Agent 都配套可量化的评测，效果说得清、经得起复盘，而非「看起来能用」。",
+  },
+  {
+    title: "交付即可用、可维护",
+    desc: "结构清晰、文档完整、便于交接。团队接手后能自己迭代，而不是被供应商绑定。",
+  },
+  {
+    title: "长期陪跑",
+    desc: "从第一个场景到规模化落地，我们陪你一起打磨，持续释放 AI 的复利价值。",
+  },
+];
+---
+
+<Base>
+  <a id="top"></a>
+  <Header />
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">英选 · YINGXUAN</span>
+          <h1>
+            把 AI Agent，<br />
+            变成企业的<span class="gradient-text">真正生产力</span>
+          </h1>
+          <p class="hero-sub">
+            英选专注 AI Agent 建设咨询与定制化 Agent 开发。从战略选型到工程落地，帮你选对方向、建好 Agent，让 AI 真正参与到业务里。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">
+              预约咨询
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn btn-ghost" href="#services">了解服务</a>
+          </div>
+          <ul class="hero-chips">
+            <li>咨询 + 开发 一站式</li>
+            <li>效果可评测</li>
+            <li>交付可维护</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 360 360" class="orbit" role="presentation">
+            <defs>
+              <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5b8bff" />
+                <stop offset="52%" stop-color="#7c5cff" />
+                <stop offset="100%" stop-color="#22d3ee" />
+              </linearGradient>
+            </defs>
+            <circle cx="180" cy="180" r="150" fill="none" stroke="url(#hg)" stroke-opacity="0.18" stroke-width="1" />
+            <circle cx="180" cy="180" r="112" fill="none" stroke="url(#hg)" stroke-opacity="0.28" stroke-width="1" />
+            <circle cx="180" cy="180" r="74" fill="none" stroke="url(#hg)" stroke-opacity="0.4" stroke-width="1" />
+            <!-- gem core -->
+            <g fill="none" stroke="url(#hg)" stroke-width="2.4" stroke-linejoin="round">
+              <path d="M132 150 L180 102 L228 150 L180 258 Z" />
+              <path d="M132 150 L228 150" />
+              <path d="M156 150 L180 258 M204 150 L180 258" stroke-opacity="0.65" />
+              <path d="M180 102 L180 150" stroke-opacity="0.65" />
+            </g>
+            <circle cx="180" cy="150" r="5" fill="url(#hg)" />
+            <!-- orbiting nodes -->
+            <g fill="url(#hg)">
+              <circle cx="180" cy="30" r="5" />
+              <circle cx="330" cy="180" r="5" />
+              <circle cx="68" cy="256" r="4" />
+              <circle cx="292" cy="256" r="4" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">核心服务</span>
+          <h2>两条腿走路：<span class="gradient-text">先选对，再做好</span></h2>
+          <p>先用咨询帮你想清楚「该不该做、做什么」，再用定制开发把方案变成能长期运行的系统。</p>
+        </div>
+
+        <div class="services-grid">
+          {services.map((s) => (
+            <article class="card service-card">
+              <span class="service-tag">{s.tag}</span>
+              <h3>{s.title}</h3>
+              <p class="service-lead">{s.lead}</p>
+              <p class="service-desc">{s.desc}</p>
+              <ul class="service-points">
+                {s.points.map((p) => (
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M20 6 9 17l-5-5" stroke="url(#hg)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAPABILITIES ============ -->
+    <section id="capabilities" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">能力矩阵</span>
+          <h2>把 Agent 做「靠谱」<span class="gradient-text">所需要的全部环节</span></h2>
+          <p>一个能创造价值的 Agent，远不止调用大模型。这些是我们在每个项目里都会认真对待的能力。</p>
+        </div>
+
+        <div class="cap-grid">
+          {capabilities.map((c, i) => (
+            <article class="card cap-card">
+              <span class="cap-index">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{c.title}</h3>
+              <p>{c.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">服务流程</span>
+          <h2>四步，<span class="gradient-text">从想法到上线</span></h2>
+          <p>清晰的节奏与可验收的里程碑，让每一步都看得见进展。</p>
+        </div>
+
+        <ol class="steps">
+          {steps.map((st) => (
+            <li class="step">
+              <span class="step-n">{st.n}</span>
+              <h3>{st.title}</h3>
+              <p>{st.desc}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section id="why" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">为什么选择英选</span>
+          <h2>不止交付一个 Agent，<span class="gradient-text">更交付确定性</span></h2>
+        </div>
+
+        <div class="why-grid">
+          {reasons.map((r) => (
+            <article class="card why-card">
+              <h3>{r.title}</h3>
+              <p>{r.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / CTA ============ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="cta">
+          <div class="cta-glow" aria-hidden="true"></div>
+          <h2>聊聊你的 <span class="gradient-text">AI Agent</span> 场景</h2>
+          <p>无论你还在评估方向，还是已经有明确需求，我们都乐意先聊一次——帮你判断值不值得做、怎么做最省力。</p>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="mailto:hello@yingxuan.example.com">
+              发送邮件咨询
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <p class="cta-note">
+            ⚠️ 邮箱 <code>hello@yingxuan.example.com</code> 为占位信息，真实联系方式确认后替换。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  /* ---------------- HERO ---------------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(56px, 9vw, 96px);
+    padding-bottom: clamp(64px, 10vw, 120px);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--glow);
+    pointer-events: none;
+  }
+  .hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(70% 60% at 50% 0%, #000 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(70% 60% at 50% 0%, #000 0%, transparent 75%);
+  }
+  .hero-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero-copy h1 {
+    font-size: clamp(36px, 6.4vw, 66px);
+    margin-top: 22px;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    margin-top: 24px;
+    max-width: 540px;
+    font-size: clamp(16px, 2.1vw, 19px);
+    color: var(--text-muted);
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 36px;
+  }
+  .hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    list-style: none;
+    padding: 0;
+    margin: 34px 0 0;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .hero-chips li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-chips li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--gradient);
+  }
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+  }
+  .orbit {
+    width: min(100%, 420px);
+    filter: drop-shadow(0 30px 60px rgba(124, 92, 255, 0.25));
+    animation: float 7s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+
+  /* ---------------- SECTION BG ALT ---------------- */
+  .section-alt {
+    background: var(--bg-elev);
+    border-block: 1px solid var(--border);
+  }
+
+  /* ---------------- SERVICES ---------------- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    padding: 34px;
+  }
+  .service-tag {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--text-faint);
+  }
+  .service-card h3 {
+    font-size: 26px;
+    margin-top: 10px;
+  }
+  .service-lead {
+    margin-top: 12px;
+    font-size: 17px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .service-desc {
+    margin-top: 12px;
+    color: var(--text-muted);
+  }
+  .service-points {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+    display: grid;
+    gap: 12px;
+  }
+  .service-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text);
+    font-size: 15px;
+  }
+  .service-points svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ---------------- CAPABILITIES ---------------- */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .cap-card h3 {
+    font-size: 19px;
+    margin-top: 14px;
+  }
+  .cap-card p {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+  .cap-index {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ---------------- PROCESS ---------------- */
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    padding: 28px 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .step:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+  }
+  .step-n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0a0a12;
+    background: var(--gradient);
+  }
+  .step h3 {
+    font-size: 20px;
+    margin-top: 18px;
+  }
+  .step p {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+
+  /* ---------------- WHY ---------------- */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .why-card h3 {
+    font-size: 20px;
+  }
+  .why-card p {
+    margin-top: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ---------------- CTA ---------------- */
+  .cta {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: clamp(48px, 8vw, 84px) 32px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(124, 92, 255, 0.08), rgba(255, 255, 255, 0.02));
+  }
+  .cta-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(50% 60% at 50% 0%, rgba(124, 92, 255, 0.35), transparent 70%);
+    pointer-events: none;
+  }
+  .cta h2 {
+    position: relative;
+    font-size: clamp(28px, 4.6vw, 46px);
+  }
+  .cta p {
+    position: relative;
+    max-width: 560px;
+    margin: 18px auto 0;
+    color: var(--text-muted);
+    font-size: 17px;
+  }
+  .cta-actions {
+    position: relative;
+    margin-top: 32px;
+  }
+  .cta-note {
+    position: relative;
+    margin-top: 24px !important;
+    font-size: 13px !important;
+    color: var(--text-faint) !important;
+  }
+  .cta-note code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--text-muted);
+    background: var(--surface);
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  /* ---------------- RESPONSIVE ---------------- */
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .hero-visual {
+      order: -1;
+    }
+    .orbit {
+      width: min(72%, 320px);
+    }
+    .cap-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .services-grid,
+    .cap-grid,
+    .why-grid,
+    .steps {
+      grid-template-columns: 1fr;
+    }
+    .service-card {
+      padding: 26px;
+    }
+  }
+</style>

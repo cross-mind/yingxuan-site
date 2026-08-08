@@ -1,0 +1,97 @@
+---
+const nav = [
+  { href: "#services", label: "服务" },
+  { href: "#capabilities", label: "能力" },
+  { href: "#process", label: "流程" },
+  { href: "#why", label: "优势" },
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="英选 首页">
+      <img src="/favicon.svg" width="34" height="34" alt="" />
+      <span class="brand-name">英选</span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <a class="btn btn-primary header-cta" href="#contact">
+      预约咨询
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: rgba(7, 7, 12, 0.62);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .nav {
+    display: flex;
+    gap: 34px;
+    font-size: 15px;
+    color: var(--text-muted);
+  }
+  .nav a {
+    position: relative;
+    transition: color 0.2s ease;
+  }
+  .nav a:hover {
+    color: var(--text);
+  }
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gradient);
+    transition: width 0.24s ease;
+  }
+  .nav a:hover::after {
+    width: 100%;
+  }
+  .header-cta {
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+  @media (max-width: 760px) {
+    .nav {
+      display: none;
+    }
+  }
+  @media (max-width: 420px) {
+    .header-cta {
+      display: none;
+    }
+  }
+</style>

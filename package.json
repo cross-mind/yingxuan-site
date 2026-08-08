@@ -1,0 +1,17 @@
+{
+  "name": "yingxuan-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "英选 — AI Agent 建设咨询与定制化 Agent 服务 · 品牌官网",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  }
+}

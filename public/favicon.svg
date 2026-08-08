@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="英选">
+  <defs>
+    <linearGradient id="yx-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5B8BFF"/>
+      <stop offset="52%" stop-color="#7C5CFF"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="15" fill="#0B0B12"/>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="14.25" fill="none" stroke="url(#yx-grad)" stroke-opacity="0.35" stroke-width="1.5"/>
+  <!-- faceted gem: 英选 = 精选之钻 -->
+  <g fill="none" stroke="url(#yx-grad)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M20 26 L32 14 L44 26 L32 50 Z" stroke-linejoin="round"/>
+    <path d="M20 26 L44 26" stroke-linejoin="round"/>
+    <path d="M26.2 26 L32 50 M37.8 26 L32 50" stroke-linejoin="round" stroke-opacity="0.7"/>
+    <path d="M32 14 L32 26" stroke-opacity="0.7"/>
+  </g>
+  <!-- AI node spark -->
+  <circle cx="32" cy="26" r="2.6" fill="url(#yx-grad)"/>
+</svg>
